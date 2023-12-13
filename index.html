@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: url(a0757079855015.5d6281242c36a.gif);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #quiz-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(15, 143, 199, 0.8);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #quiz-number {
+            font-size: 20px;
+            font-style: initial;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: left;
+            
+        }
+
+        #title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        #question {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #333;
+            font-style: oblique;
+            font-weight: 300;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+
+        .option {
+            margin: 10px;
+            padding: 15px;
+            cursor: pointer;
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #2196f3;
+            color: #fff;
+        }
+
+        #start-btn,
+        #next-btn,
+        #restart-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #start-btn,
+        #next-btn {
+            background-color: #2196f3;
+            color: #fff;
+        }
+
+        #restart-btn {
+            background-color: #2196f3;
+            color: #fff;
+        }
+
+        #timer {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #f44336;
+        }
+
+        #feedback {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #4caf50;
+        }
+
+        @media screen and (max-width: 600px) {
+            #quiz-container {
+                padding: 20px;
+            }
+
+            #title {
+                font-size: 24px;
+            }
+
+            #question {
+                font-size: 18px;
+            }
+
+            .option {
+                padding: 10px;
+            }
+
+            #start-btn,
+            #next-btn,
+            #restart-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="quiz-number"></div>
+        <div id="title">QUIZ APPLICATION</div>
+        <div id="question"></div>
+        <div class="options" id="options-container"></div>
+        <div id="timer"></div>
+        <div id="feedback"></div>
+        <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+        <button id="next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+        <button id="restart-btn" onclick="restartQuiz()" style="display: none;">Restart</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
